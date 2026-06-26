@@ -1,0 +1,21 @@
+# Игнорируем системные папки Unity в любых подпапках
+**/Library/
+**/Temp/
+**/Obj/
+**/Build/
+**/Builds/
+**/Logs/
+**/UserSettings/
+
+# Игнорируем файлы сборки и кэш IDE
+**/.vs/
+**/.idea/
+**/*.csproj
+**/*.unityproj
+**/*.sln
+**/*.suo
+**/*.tmp
+**/*.user
+**/*.userprefs
+**/*.pidb
+**/*.booproj
