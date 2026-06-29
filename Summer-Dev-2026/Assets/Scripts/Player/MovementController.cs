@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
@@ -59,8 +60,8 @@ public class MovementController : MonoBehaviour
     }
     private void movePlayer()//функция передвижения
     {
-        Vector3 targetVelocity = new Vector3(moveInput.x,0f,moveInput.y) * moveSpeed;//ветор направления нашей куда мы хотим пойти
-        Vector3 currentVelocity = rb.linearVelocity;//текущее наше направление
+        Vector3 targetVelocity = transform.TransformDirection(new Vector3(moveInput.x,0f,moveInput.y)) * moveSpeed;//ветор направления нашей куда мы хотим пойти TransformDirection преобразует направление из локальных координат объекта в мировые, учитывая его текущий поворот.
+        Vector3 currentVelocity = rb.linearVelocity;//текущее наше направление 
         Vector3 velocityChange = targetVelocity - new Vector3(currentVelocity.x,0f,currentVelocity.z);//получаем на сколько надо ускориться или замедлиться чтобы получить нашу скорость которую мы хотим иметь(остановиться и не сколькить как корова на льду)
         velocityChange.x = Mathf.Clamp(velocityChange.x, -MaxForce, MaxForce);//устанавливаем макс для скорости передвиж
         velocityChange.z = Mathf.Clamp(velocityChange.z, -MaxForce, MaxForce);//устанавливаем макс для скорости передвиж
