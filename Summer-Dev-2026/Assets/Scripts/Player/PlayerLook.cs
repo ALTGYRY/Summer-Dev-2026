@@ -24,7 +24,7 @@ public class CameraMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 lookInput = m_mouseAction.ReadValue<Vector2>() * mouseSensitivity;
+        Vector2 lookInput = m_mouseAction.ReadValue<Vector2>() * mouseSensitivity; 
         transform.Rotate(Vector3.up * lookInput.x);// ѕоворачиваем персонажа влево/вправо вокруг оси Y
         m_xRotation -= lookInput.y;// »змен€ем угол наклона камеры по вертикали
         m_xRotation = Mathf.Clamp(m_xRotation, -90f, 90f);//границы дл€ поднимани€ вверх
