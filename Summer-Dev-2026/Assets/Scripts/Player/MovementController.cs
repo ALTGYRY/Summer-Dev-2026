@@ -1,7 +1,5 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Rendering;
 [RequireComponent(typeof(Rigidbody))]
 public class MovementController : MonoBehaviour
 {
